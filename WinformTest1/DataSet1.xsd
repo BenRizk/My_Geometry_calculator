@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Grid_points" msprop:Generator_TableClassName="Grid_pointsDataTable" msprop:Generator_TableVarName="tableGrid_points" msprop:Generator_TablePropName="Grid_points" msprop:Generator_RowDeletingName="Grid_pointsRowDeleting" msprop:Generator_RowChangingName="Grid_pointsRowChanging" msprop:Generator_RowEvHandlerName="Grid_pointsRowChangeEventHandler" msprop:Generator_RowDeletedName="Grid_pointsRowDeleted" msprop:Generator_UserTableName="Grid_points" msprop:Generator_RowChangedName="Grid_pointsRowChanged" msprop:Generator_RowEvArgName="Grid_pointsRowChangeEvent" msprop:Generator_RowClassName="Grid_pointsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="XCord" msprop:Generator_ColumnVarNameInTable="columnXCord" msprop:Generator_ColumnPropNameInRow="XCord" msprop:Generator_ColumnPropNameInTable="XCordColumn" msprop:Generator_UserColumnName="XCord" type="xs:int" minOccurs="0" />
+              <xs:element name="YCord" msprop:Generator_ColumnVarNameInTable="columnYCord" msprop:Generator_ColumnPropNameInRow="YCord" msprop:Generator_ColumnPropNameInTable="YCordColumn" msprop:Generator_UserColumnName="YCord" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Grid_pointsKey1">
+      <xs:selector xpath=".//mstns:Grid_points" />
+      <xs:field xpath="mstns:XCord" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
