@@ -291,9 +291,8 @@ namespace WinformTest1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //button to draw line across graph
         {
-            
             
             if (Int32.TryParse(textBox1.Text, out dummy) && Int32.TryParse(textBox2.Text, out dummy))
             {
@@ -341,7 +340,11 @@ namespace WinformTest1
         {
             if (Int32.TryParse(firstPoint.Text, out dummy) && Int32.TryParse(secondPoint.Text, out dummy) && RelevantPoints >= 2)
             {
-                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[RelevantPoints - Int32.Parse(firstPoint.Text)], graphPoints[RelevantPoints - Int32.Parse(secondPoint.Text)]);
+                if(Int32.Parse(firstPoint.Text) >= 1 && Int32.Parse(secondPoint.Text) >= 1)
+                {
+                    this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[Int32.Parse(firstPoint.Text) - 1], graphPoints[Int32.Parse(secondPoint.Text) - 1]);
+                }
+                
             }
             
         }
@@ -431,6 +434,20 @@ namespace WinformTest1
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)// button for finding segment length
+        {
+            if (Int32.TryParse(firstPoint.Text, out dummy) && Int32.TryParse(secondPoint.Text, out dummy) && RelevantPoints >= 2)
+            {
+                if(Int32.Parse(firstPoint.Text) >= 1 && Int32.Parse(secondPoint.Text) >= 1)
+                {
+                    int x = dataPoints[Int32.Parse(firstPoint.Text) - 1].X - dataPoints[Int32.Parse(secondPoint.Text) - 1].X;
+                    int y = dataPoints[Int32.Parse(firstPoint.Text) - 1].Y - dataPoints[Int32.Parse(secondPoint.Text) - 1].Y;
+                    label10.Text = "Result: " + Math.Sqrt((Math.Pow(x,2) + Math.Pow(y,2))).ToString();
+                }
+                
+            }
         }
     }
 }

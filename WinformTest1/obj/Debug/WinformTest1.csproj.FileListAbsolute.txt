@@ -18,3 +18,23 @@ C:\Users\BRizk\Documents\Code File\WinformTest1\bin\Debug\LiveCharts.WinForms.xm
 C:\Users\BRizk\Documents\Code File\WinformTest1\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\BRizk\Documents\Code File\WinformTest1\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\BRizk\Documents\Code File\WinformTest1\obj\Debug\WinformTest1.csproj.CopyComplete
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\WinformTest1.exe.config
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\WinformTest1.exe
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\WinformTest1.pdb
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.dll
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.pdb
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.xml
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.csprojAssemblyReference.cache
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.Calculator.resources
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.Properties.Resources.resources
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.csproj.GenerateResource.cache
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.csproj.CoreCompileInputs.cache
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.csproj.CopyComplete
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.exe
+C:\Users\BRizk\Documents\GitHub\My_Geometry_calculator\My_Geometry_calculator\WinformTest1\obj\Debug\WinformTest1.pdb
