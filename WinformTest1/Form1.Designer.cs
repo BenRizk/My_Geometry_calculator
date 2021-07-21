@@ -66,6 +66,11 @@ namespace WinformTest1
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridpointsBindingSource)).BeginInit();
@@ -263,9 +268,9 @@ namespace WinformTest1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(852, 369);
+            this.button1.Location = new System.Drawing.Point(848, 369);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 23);
+            this.button1.Size = new System.Drawing.Size(203, 23);
             this.button1.TabIndex = 25;
             this.button1.Text = "Find Angle";
             this.button1.UseVisualStyleBackColor = true;
@@ -273,9 +278,9 @@ namespace WinformTest1
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(861, 461);
+            this.button6.Location = new System.Drawing.Point(848, 487);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(190, 23);
+            this.button6.Size = new System.Drawing.Size(201, 23);
             this.button6.TabIndex = 26;
             this.button6.Text = "Draw Polygon";
             this.button6.UseVisualStyleBackColor = true;
@@ -297,7 +302,7 @@ namespace WinformTest1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(998, 337);
+            this.textBox5.Location = new System.Drawing.Point(996, 338);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(53, 20);
             this.textBox5.TabIndex = 29;
@@ -313,7 +318,7 @@ namespace WinformTest1
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(861, 425);
+            this.textBox6.Location = new System.Drawing.Point(852, 451);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(39, 20);
             this.textBox6.TabIndex = 31;
@@ -321,7 +326,7 @@ namespace WinformTest1
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(915, 425);
+            this.textBox7.Location = new System.Drawing.Point(906, 451);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(35, 20);
             this.textBox7.TabIndex = 32;
@@ -329,7 +334,7 @@ namespace WinformTest1
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(970, 425);
+            this.textBox8.Location = new System.Drawing.Point(958, 451);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(34, 20);
             this.textBox8.TabIndex = 33;
@@ -337,7 +342,7 @@ namespace WinformTest1
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(1012, 425);
+            this.textBox9.Location = new System.Drawing.Point(1010, 451);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(39, 20);
             this.textBox9.TabIndex = 34;
@@ -345,7 +350,7 @@ namespace WinformTest1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(912, 409);
+            this.label9.Location = new System.Drawing.Point(903, 435);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 35;
@@ -370,11 +375,60 @@ namespace WinformTest1
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(848, 398);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(203, 23);
+            this.button8.TabIndex = 38;
+            this.button8.Text = "Invert Last Angle";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(903, 539);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Choose Two Lines:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(850, 565);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(72, 20);
+            this.textBox10.TabIndex = 40;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(968, 565);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(72, 20);
+            this.textBox11.TabIndex = 41;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(850, 604);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(199, 23);
+            this.button9.TabIndex = 42;
+            this.button9.Text = "Find Intersection";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 974);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -455,6 +509,11 @@ namespace WinformTest1
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button button9;
     }
 }
 
