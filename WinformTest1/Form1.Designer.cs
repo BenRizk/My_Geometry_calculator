@@ -78,14 +78,14 @@ namespace WinformTest1
             // 
             // IntegerA
             // 
-            this.IntegerA.Location = new System.Drawing.Point(848, 39);
+            this.IntegerA.Location = new System.Drawing.Point(210, 438);
             this.IntegerA.Name = "IntegerA";
             this.IntegerA.Size = new System.Drawing.Size(63, 20);
             this.IntegerA.TabIndex = 1;
             // 
             // IntegerB
             // 
-            this.IntegerB.Location = new System.Drawing.Point(977, 38);
+            this.IntegerB.Location = new System.Drawing.Point(339, 437);
             this.IntegerB.Name = "IntegerB";
             this.IntegerB.Size = new System.Drawing.Size(63, 20);
             this.IntegerB.TabIndex = 2;
@@ -107,7 +107,7 @@ namespace WinformTest1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(848, 65);
+            this.button2.Location = new System.Drawing.Point(210, 464);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(201, 23);
             this.button2.TabIndex = 5;
@@ -119,7 +119,7 @@ namespace WinformTest1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(825, 42);
+            this.label1.Location = new System.Drawing.Point(187, 441);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 8;
@@ -129,7 +129,7 @@ namespace WinformTest1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(954, 42);
+            this.label2.Location = new System.Drawing.Point(316, 441);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
             this.label2.TabIndex = 9;
@@ -138,14 +138,14 @@ namespace WinformTest1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(891, 110);
+            this.textBox1.Location = new System.Drawing.Point(660, 437);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(31, 20);
             this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(955, 111);
+            this.textBox2.Location = new System.Drawing.Point(724, 438);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(30, 20);
             this.textBox2.TabIndex = 11;
@@ -154,7 +154,7 @@ namespace WinformTest1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(864, 113);
+            this.label3.Location = new System.Drawing.Point(633, 440);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 13);
             this.label3.TabIndex = 12;
@@ -164,7 +164,7 @@ namespace WinformTest1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(893, 95);
+            this.label4.Location = new System.Drawing.Point(662, 422);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 13;
@@ -174,7 +174,7 @@ namespace WinformTest1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(955, 95);
+            this.label5.Location = new System.Drawing.Point(724, 422);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 13);
             this.label5.TabIndex = 14;
@@ -183,7 +183,7 @@ namespace WinformTest1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(928, 113);
+            this.label6.Location = new System.Drawing.Point(697, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(21, 13);
             this.label6.TabIndex = 15;
@@ -192,9 +192,9 @@ namespace WinformTest1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(848, 142);
+            this.button3.Location = new System.Drawing.Point(595, 468);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 23);
+            this.button3.Size = new System.Drawing.Size(201, 19);
             this.button3.TabIndex = 17;
             this.button3.Text = "Add Line";
             this.button3.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@ namespace WinformTest1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(848, 220);
+            this.button4.Location = new System.Drawing.Point(93, 532);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(201, 23);
             this.button4.TabIndex = 18;
@@ -212,7 +212,7 @@ namespace WinformTest1
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(848, 278);
+            this.button5.Location = new System.Drawing.Point(93, 590);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(201, 23);
             this.button5.TabIndex = 19;
@@ -222,14 +222,14 @@ namespace WinformTest1
             // 
             // firstPoint
             // 
-            this.firstPoint.Location = new System.Drawing.Point(850, 194);
+            this.firstPoint.Location = new System.Drawing.Point(95, 506);
             this.firstPoint.Name = "firstPoint";
             this.firstPoint.Size = new System.Drawing.Size(72, 20);
             this.firstPoint.TabIndex = 20;
             // 
             // secondPoint
             // 
-            this.secondPoint.Location = new System.Drawing.Point(968, 194);
+            this.secondPoint.Location = new System.Drawing.Point(213, 506);
             this.secondPoint.Name = "secondPoint";
             this.secondPoint.Size = new System.Drawing.Size(72, 20);
             this.secondPoint.TabIndex = 21;
@@ -238,7 +238,7 @@ namespace WinformTest1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(910, 178);
+            this.label7.Location = new System.Drawing.Point(155, 490);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 13);
             this.label7.TabIndex = 22;
@@ -248,7 +248,7 @@ namespace WinformTest1
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(769, 69);
+            this.checkBox1.Location = new System.Drawing.Point(131, 468);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(73, 17);
             this.checkBox1.TabIndex = 23;
@@ -258,7 +258,7 @@ namespace WinformTest1
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(488, 427);
+            this.resetButton.Location = new System.Drawing.Point(608, 337);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(103, 23);
             this.resetButton.TabIndex = 24;
@@ -268,7 +268,7 @@ namespace WinformTest1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(848, 369);
+            this.button1.Location = new System.Drawing.Point(95, 677);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(203, 23);
             this.button1.TabIndex = 25;
@@ -278,23 +278,24 @@ namespace WinformTest1
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(848, 487);
+            this.button6.Location = new System.Drawing.Point(318, 542);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(201, 23);
             this.button6.TabIndex = 26;
             this.button6.Text = "Draw Polygon";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(852, 338);
+            this.textBox3.Location = new System.Drawing.Point(99, 646);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(51, 20);
             this.textBox3.TabIndex = 27;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(922, 337);
+            this.textBox4.Location = new System.Drawing.Point(169, 645);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(58, 20);
             this.textBox4.TabIndex = 28;
@@ -302,7 +303,7 @@ namespace WinformTest1
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(996, 338);
+            this.textBox5.Location = new System.Drawing.Point(243, 646);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(53, 20);
             this.textBox5.TabIndex = 29;
@@ -310,7 +311,7 @@ namespace WinformTest1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(912, 312);
+            this.label8.Location = new System.Drawing.Point(159, 620);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 13);
             this.label8.TabIndex = 30;
@@ -318,7 +319,7 @@ namespace WinformTest1
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(852, 451);
+            this.textBox6.Location = new System.Drawing.Point(322, 506);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(39, 20);
             this.textBox6.TabIndex = 31;
@@ -326,7 +327,7 @@ namespace WinformTest1
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(906, 451);
+            this.textBox7.Location = new System.Drawing.Point(376, 506);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(35, 20);
             this.textBox7.TabIndex = 32;
@@ -334,7 +335,7 @@ namespace WinformTest1
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(958, 451);
+            this.textBox8.Location = new System.Drawing.Point(428, 506);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(34, 20);
             this.textBox8.TabIndex = 33;
@@ -342,7 +343,7 @@ namespace WinformTest1
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(1010, 451);
+            this.textBox9.Location = new System.Drawing.Point(480, 506);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(39, 20);
             this.textBox9.TabIndex = 34;
@@ -350,7 +351,7 @@ namespace WinformTest1
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(903, 435);
+            this.label9.Location = new System.Drawing.Point(373, 490);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 35;
@@ -367,7 +368,7 @@ namespace WinformTest1
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(848, 249);
+            this.button7.Location = new System.Drawing.Point(93, 561);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(201, 23);
             this.button7.TabIndex = 37;
@@ -377,7 +378,7 @@ namespace WinformTest1
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(848, 398);
+            this.button8.Location = new System.Drawing.Point(95, 706);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(203, 23);
             this.button8.TabIndex = 38;
@@ -388,7 +389,7 @@ namespace WinformTest1
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(903, 539);
+            this.label11.Location = new System.Drawing.Point(642, 506);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 13);
             this.label11.TabIndex = 39;
@@ -397,23 +398,23 @@ namespace WinformTest1
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(850, 565);
+            this.textBox10.Location = new System.Drawing.Point(595, 522);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(72, 20);
+            this.textBox10.Size = new System.Drawing.Size(74, 20);
             this.textBox10.TabIndex = 40;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(968, 565);
+            this.textBox11.Location = new System.Drawing.Point(713, 522);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(72, 20);
+            this.textBox11.Size = new System.Drawing.Size(74, 20);
             this.textBox11.TabIndex = 41;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(850, 604);
+            this.button9.Location = new System.Drawing.Point(595, 561);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(199, 23);
+            this.button9.Size = new System.Drawing.Size(201, 23);
             this.button9.TabIndex = 42;
             this.button9.Text = "Find Intersection";
             this.button9.UseVisualStyleBackColor = true;
@@ -423,7 +424,7 @@ namespace WinformTest1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 974);
+            this.ClientSize = new System.Drawing.Size(1343, 791);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);

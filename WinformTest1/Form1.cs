@@ -201,8 +201,8 @@ namespace WinformTest1
                 Console.WriteLine(x);
                 Console.WriteLine(y);
                 Console.WriteLine(Math.Atan(y / x));
-                Console.WriteLine((180.0 / Math.PI) * Math.Atan(y / x));   //todo: this shit isn't accurate enough
-                return (180.0 / Math.PI) * Math.Atan(y / x);
+                Console.WriteLine((180.0 / Math.PI) * Math.Atan(y / x));   
+                return (180.0 / Math.PI) * Math.Atan(y * 10 / x * 10); //need to make numbers larger, math.Atan isn't accurate enough with tiny numbers
             }
             
         }
@@ -214,7 +214,7 @@ namespace WinformTest1
 
         public void redraw()
         {
-            //draw all points most recent points
+            //draw all points points
             for (int i = 0; i < currentPos; i++)
             {
                 this.CreateGraphics().FillEllipse(new SolidBrush(Color.Black), graphPoints[currentPos - i].X, graphPoints[currentPos - i].Y, 5, 5);
@@ -265,6 +265,7 @@ namespace WinformTest1
                 lines[lineAmount, 1] = b;
                 lineAmount++;
                 this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), p1, p2);
+                this.CreateGraphics().DrawString("Line: " + lineAmount.ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), 350 - 3, 200 - (m * 50 + b) - 45);
             }
 
         }
@@ -372,7 +373,7 @@ namespace WinformTest1
             this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), new Point(225, 0), new Point(225, 350));
         }
 
-        private void button1_Click_1(object sender, EventArgs e) //button to determine angle
+        private void button1_Click_1(object sender, EventArgs e) //button to determine angle between three points
         {
             double angle1 = 0;
             double angle2 = 0;
@@ -423,6 +424,8 @@ namespace WinformTest1
         {
             label10.Text = "Inverted result: " + (360 - lastAngle).ToString();
         }
+
+
         private void button9_Click(object sender, EventArgs e) //button to find intersection between lines
         {
             if (Int32.TryParse(textBox10.Text, out dummy) && Int32.TryParse(textBox11.Text, out dummy) && lineAmount >= 2)
@@ -433,9 +436,10 @@ namespace WinformTest1
                 if ((lines[line2, 0] - lines[line1, 0]) == 0)
                 {
                     label10.Text = "Inconclusive";
+                    return;
                 }
 
-                int xVal = (lines[line2, 1] - lines[line1, 1])/(lines[line2, 0] - lines[line1, 0]);
+                int xVal = (lines[line2, 1] - lines[line1, 1])/(lines[line1, 0] - lines[line2, 0]);
                 int yVal = lines[line1, 0] * xVal + lines[line1, 1];
 
                 label10.Text = "Intersection point = (" + xVal.ToString() + "," + yVal.ToString() + ")";
@@ -483,6 +487,14 @@ namespace WinformTest1
 
         }
 
-        
+        private void button6_Click(object sender, EventArgs e) //button to draw polygon given 4 points
+        {
+            if (Int32.TryParse(textBox6.Text, out dummy) && Int32.TryParse(textBox7.Text, out dummy) && Int32.TryParse(textBox8.Text, out dummy) && Int32.TryParse(textBox9.Text, out dummy))
+            { 
+            
+            
+            
+            }
+        }
     }
 }
