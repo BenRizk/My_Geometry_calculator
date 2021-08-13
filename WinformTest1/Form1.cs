@@ -202,7 +202,7 @@ namespace WinformTest1
                 Console.WriteLine(y);
                 Console.WriteLine(Math.Atan(y / x));
                 Console.WriteLine((180.0 / Math.PI) * Math.Atan(y / x));   
-                return (180.0 / Math.PI) * Math.Atan(y * 10 / x * 10); //need to make numbers larger, math.Atan isn't accurate enough with tiny numbers
+                return (180.0 / Math.PI) * Math.Atan(y * 10 / x * 10); //need to make numbers larger, math.Atan isn't accurate enough with one digit numbers
             }
             
         }
@@ -235,13 +235,36 @@ namespace WinformTest1
 
             }
         }
-        private void button3_Click(object sender, EventArgs e) //button to draw line across graph
+        private void button3_Click(object sender, EventArgs e) //button to draw line across graph given by y = mx+b
         {
+            int m = 0;
+            int b;
+            string[] slopeParts;
+            bool slopeDecimal = false;
+
+
+            if (textBox1.Text.Contains("/")) //if slope is fraction is entered then convert
+            {
+                slopeParts = textBox1.Text.Split('/');
+                if (Int32.TryParse(slopeParts[0], out dummy) && Int32.TryParse(slopeParts[1], out dummy))
+                {
+                    m = Int32.Parse(slopeParts[0]) / Int32.Parse(slopeParts[1]);
+                    Console.WriteLine(Int32.Parse(slopeParts[0]));
+                    Console.WriteLine(Int32.Parse(slopeParts[1]));
+                    Console.WriteLine(m);
+                }        
+                slopeDecimal = true;
+            }    
 
             if (Int32.TryParse(textBox1.Text, out dummy) && Int32.TryParse(textBox2.Text, out dummy))
             {
-                int m = Int32.Parse(textBox1.Text); // take values from text boxes and store as m and b
-                int b = Int32.Parse(textBox2.Text);
+                if (!slopeDecimal)//if not a fraction than convert straight to int
+                {
+                    m = Convert.ToInt32(Convert.ToDouble(textBox1.Text));// take values from text boxes and store as m and b   
+                }
+
+                b = Convert.ToInt32(Convert.ToDouble(textBox2.Text));
+
                 Point p1 = new Point(0, 200 - (m * -300 + b)); // set points to draw to
                 Point p2 = new Point(600, 200 - (m * 300 + b));
 

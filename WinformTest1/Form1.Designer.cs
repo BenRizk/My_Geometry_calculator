@@ -240,9 +240,9 @@ namespace WinformTest1
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(155, 490);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.Size = new System.Drawing.Size(99, 13);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Choose Points";
+            this.label7.Text = "Choose Two Points";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // checkBox1
@@ -311,11 +311,11 @@ namespace WinformTest1
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(159, 620);
+            this.label8.Location = new System.Drawing.Point(155, 629);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.Size = new System.Drawing.Size(106, 13);
             this.label8.TabIndex = 30;
-            this.label8.Text = "Choose Points";
+            this.label8.Text = "Choose Three Points";
             // 
             // textBox6
             // 
@@ -353,9 +353,9 @@ namespace WinformTest1
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(373, 490);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 13);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Choose Points";
+            this.label9.Text = "Choose Four Points";
             // 
             // label10
             // 
