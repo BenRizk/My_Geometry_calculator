@@ -12,15 +12,20 @@ namespace WinformTest1
 {
     public partial class Calculator : Form
     {
+        //drawing values
         Rectangle field = new Rectangle(0, 0, 600, 400); //general rectange for graph use
-        Point[] graphPoints = new Point[100]; // store points as entered to draw on graph
-        Point[] dataPoints = new Point[100];// store points as entered to calculate on
-        int[,] lines = new int[50, 2]; // double array to hold lines in y = mx + b
+        Point[] graphPoints = new Point[100]; // store points as entered to draw on graph             
         int lineAmount = 0; //counter to track amount of lines
         int currentPos = 0; //counter to check amount of points entered
         int RelevantPoints = 0; //count the amount of relevant points
         Boolean autoDraw = false;
+        int scale = 1;
         int dummy;
+        
+
+        //mathemmatic values
+        Point[] dataPoints = new Point[100];// store points as entered to calculate on
+        int[,] lines = new int[50, 2]; // double array to hold lines in y = mx + b
         double lastAngle = 0; //save last angle found incase it needs to be inverted
 
         public Calculator()
@@ -39,6 +44,26 @@ namespace WinformTest1
                 g.DrawRectangle(new Pen(Color.Black, 2), field);
                 g.DrawLine(new Pen(Brushes.Black, 2), new Point(0, 200), new Point(600, 200));
                 g.DrawLine(new Pen(Brushes.Black, 2), new Point(300, 0), new Point(300, 400));
+                //add lines to indicate axis lengths
+                for(int i = 0; i < 5; i++)
+                {
+                    g.DrawLine(new Pen(Brushes.Black, 2), new Point(i * 100 + 100, 190), new Point(i * 100 + 100, 210));
+                    if(i != 2)
+                    {
+                        g.DrawString(((i - 2) * 100 / scale).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), i * 100 + 90, 215);
+                    }
+                    
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    g.DrawLine(new Pen(Brushes.Black, 2), new Point(290, i * 100 + 100), new Point(310 , i * 100 + 100));
+                    if (i != 1)
+                    {
+                        g.DrawString(((1 - i) * 100 / scale).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), 315, i * 100 + 93);
+                    }
+                    
+                }
+             
             }
         }
         private void label1_Click(object sender, EventArgs e)
@@ -58,9 +83,9 @@ namespace WinformTest1
             //take point given by x and y textfield
             if (Int32.TryParse(IntegerA.Text, out dummy) && Int32.TryParse(IntegerB.Text, out dummy))
             {
-                graphPoints[currentPos] = new Point(297 + Int32.Parse(IntegerA.Text), 197 - Int32.Parse(IntegerB.Text));
+                graphPoints[currentPos] = new Point(297 + (Int32.Parse(IntegerA.Text) * scale), 197 - (Int32.Parse(IntegerB.Text) * scale)); // had to set to 297,197 instead of 300,200 because draw object is not accurate
                 dataPoints[currentPos] = new Point(Int32.Parse(IntegerA.Text), Int32.Parse(IntegerB.Text));
-                this.CreateGraphics().FillEllipse(new SolidBrush(Color.Black), graphPoints[currentPos].X, graphPoints[currentPos].Y, 5, 5);
+                this.CreateGraphics().FillEllipse(new SolidBrush(Color.Black), graphPoints[currentPos].X , graphPoints[currentPos].Y, 5, 5);
                 this.CreateGraphics().DrawString((currentPos + 1).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), graphPoints[currentPos].X - 3, graphPoints[currentPos].Y - 15);
                 currentPos++;
 
@@ -218,7 +243,7 @@ namespace WinformTest1
             for (int i = 0; i < currentPos; i++)
             {
                 this.CreateGraphics().FillEllipse(new SolidBrush(Color.Black), graphPoints[currentPos - i].X, graphPoints[currentPos - i].Y, 5, 5);
-                this.CreateGraphics().DrawString((i+1).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), graphPoints[currentPos - i].X - 3, graphPoints[currentPos - i].Y - 15);
+                this.CreateGraphics().DrawString((i+1).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), graphPoints[i].X - 3, graphPoints[i].Y - 15);
             }
         }
         private void button5_Click(object sender, EventArgs e) // button for finding and drawing midpoint between two points
@@ -394,6 +419,25 @@ namespace WinformTest1
             this.CreateGraphics().DrawRectangle(new Pen(Color.Black, 2), field);
             this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), new Point(0, 175), new Point(450, 175));
             this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), new Point(225, 0), new Point(225, 350));
+            //add lines to indicate axis lengths
+            for (int i = 0; i < 5; i++)
+            {
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), new Point(i * 100 + 100, 190), new Point(i * 100 + 100, 210));
+                if (i != 2)
+                {
+                    this.CreateGraphics().DrawString(((i - 2) * 100 / scale).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), i * 100 + 90, 215);
+                }
+
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), new Point(290, i * 100 + 100), new Point(310, i * 100 + 100));
+                if (i != 1)
+                {
+                    this.CreateGraphics().DrawString(((1 - i) * 100 / scale).ToString(), new Font(new FontFamily("Arial"), 11, FontStyle.Regular, GraphicsUnit.Pixel), new SolidBrush(Color.Black), 315, i * 100 + 93);
+                }
+
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e) //button to determine angle between three points
@@ -518,6 +562,55 @@ namespace WinformTest1
             
             
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) //scale down the graph
+        {
+            scale = 10;
+            resetDrawings();
+            
+
+            Point holder = new Point();
+            int diff1;
+            int diff2;
+
+            for(int i = 0; i < currentPos; i++)
+            {
+                holder = graphPoints[i];    //hold current point
+
+                diff1 = graphPoints[i].X - 297; //get X&Y value entered by user
+                diff2 = graphPoints[i].Y - 197;
+
+                graphPoints[i].X = 297 + diff1 * scale; // convert to use scale then return to array
+                graphPoints[i].Y = 197 + diff2 * scale;
+            }
+            redraw();
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)// set graph to origional scale
+        {
+            scale = 1;
+            resetDrawings();
+
+            Point holder = new Point();
+            int diff1;
+            int diff2;
+
+            for (int i = 0; i < currentPos; i++)
+            {
+                holder = graphPoints[i];    //hold current point
+
+                diff1 = graphPoints[i].X - 297; //get X&Y value entered by user
+                diff2 = graphPoints[i].Y - 197;
+
+                graphPoints[i].X = 297 + diff1 * scale; // convert to use scale then return to array
+                graphPoints[i].Y = 197 + diff2 * scale;
+            }
+
+
+            redraw();
+            
         }
     }
 }
