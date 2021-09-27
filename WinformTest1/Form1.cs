@@ -225,12 +225,50 @@ namespace WinformTest1
             else { //otherwise calculate angle
                 Console.WriteLine(x);
                 Console.WriteLine(y);
-                Console.WriteLine(Math.Atan(y / x));
-                Console.WriteLine((180.0 / Math.PI) * Math.Atan(y / x));   
-                return (180.0 / Math.PI) * Math.Atan(y * 10 / x * 10); //need to make numbers larger, math.Atan isn't accurate enough with one digit numbers
+                Console.WriteLine(Math.Atan2(y, x));
+                Console.WriteLine((180.0 / Math.PI) * Math.Atan2(y, x));   
+                return (180.0 / Math.PI) * Math.Atan2(y * 10, x * 10); //need to make numbers larger, math.Atan isn't accurate enough with one digit numbers
             }
             
         }
+        /*
+        Angle calculation: In order to calculate any given angle between 3 points you must choose one point to be the point where 
+        the angle we want is. The other adjacent points will be edge vertices. 
+        
+        To calculate first I translate the entire target angle to be in relation with the x-axis.
+
+        Next I isolate two lines from the target angle and determine the angle they create with the x-axis.
+
+        Then take the corresponding sum of those angles to determine the overall target angle.
+        */
+        public double findGraphingAngle(int sel1, int sel2, int sel3) //given three points from graph determine angle
+        {
+            double angle1 = 0;
+            double angle2 = 0;
+            int holdx;
+            int holdy;
+            Point holdP1;
+            Point holdP2;
+            Point holdP3;
+
+            
+                holdP1 = dataPoints[sel2]; //find first angle(angle between line 2-1 and x axis)
+                holdP2 = dataPoints[sel1];
+                holdx = holdP2.X - holdP1.X; // translate line 2-1 to get in relation with x-axis for angle calculation 
+                holdy = holdP2.Y - holdP1.Y;
+                //determine first angle 
+                angle1 = findLineAngle(holdx, holdy);
+
+                holdP3 = dataPoints[sel3]; //find second angle(angle between line 3-2 and x axis)
+                holdx = holdP3.X - holdP1.X; // translate line 3-2 to get in relation with x-axis for angle calculation 
+                holdy = holdP3.Y - holdP1.Y;
+                //determine second angle 
+                angle2 = findLineAngle(holdx, holdy);
+
+            
+            return Math.Abs(angle1 - angle2);
+        }
+
 
         public double convertToAngle(double radians)
         {
@@ -360,8 +398,6 @@ namespace WinformTest1
 
         }
 
-        
-
         private void label7_Click(object sender, EventArgs e)
         {
 
@@ -369,8 +405,7 @@ namespace WinformTest1
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            autoDraw = !autoDraw;
-            
+            autoDraw = !autoDraw;         
         }
 
         private void Ycoord_Click(object sender, EventArgs e)
@@ -378,8 +413,7 @@ namespace WinformTest1
 
         }
 
-        
-
+ 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -440,56 +474,22 @@ namespace WinformTest1
             }
         }
 
+        
         private void button1_Click_1(object sender, EventArgs e) //button to determine angle between three points
         {
-            double angle1 = 0;
-            double angle2 = 0;
-            int holdx;
-            int holdy;
-            Point hold1;
-            Point hold2;
-            Point hold3;
-
+            
+            double temp;
             if (Int32.TryParse(textBox3.Text, out dummy) && Int32.TryParse(textBox4.Text, out dummy) && Int32.TryParse(textBox5.Text, out dummy))
             {
-                hold1 = dataPoints[Int32.Parse(textBox4.Text)-1]; //find first angle(angle between line 2-1 and x axis)
-                hold2 = dataPoints[Int32.Parse(textBox3.Text)-1];
-                holdx = hold2.X - hold1.X;
-                holdy = hold2.Y - hold1.Y;
-                angle1 = findLineAngle(Math.Abs(holdx), Math.Abs(holdy));
-                if(holdx < 0) //if point is on left side of y axis than add 90 degrees
-                {
-                    angle1 = 90 - angle1;
-                    angle1 += 90;
-                }
-                if(holdy < 0) //if point is below x axis than make it negative
-                {
-                    angle1 = -angle1;
-                }
-                hold3 = dataPoints[Int32.Parse(textBox5.Text)-1]; //find second angle(angle between line 3-2 and x axis)
-                holdx = hold3.X - hold1.X;
-                holdy = hold3.Y - hold1.Y;
-                angle2 = findLineAngle(holdx, holdy);
-                if (holdx < 0) //if point is on left side of y axis than add 90 degrees
-                {
-                    angle2 = 90 - angle2;
-                    angle2 += 90;
-                }
-                if (holdy < 0) //if point is below x axis than make it negative
-                {
-                    angle2 = -angle2;
-                }
-               
-                
+                temp = findGraphingAngle(Int32.Parse(textBox3.Text) - 1, Int32.Parse(textBox4.Text) - 1, Int32.Parse(textBox5.Text) - 1);
+                label10.Text = "Result: " + temp.ToString(); //output total angle which is angle1-angle2
+                lastAngle = temp; //save last angle
             }
-
-            label10.Text = "Result: " + (angle1-angle2).ToString(); //output total angle which is angle1-angle2
-            lastAngle = angle1 - angle2;
         }
 
         private void button8_Click(object sender, EventArgs e) //button to invert last angle
         {
-            label10.Text = "Inverted result: " + (360 - lastAngle).ToString();
+            label10.Text = "Inverted result: " + (360 - Math.Abs(lastAngle)).ToString();
         }
 
 
@@ -574,7 +574,7 @@ namespace WinformTest1
             int diff1;
             int diff2;
 
-            for(int i = 0; i < currentPos; i++)
+            for(int i = 0; i < currentPos; i++) //loop through all drawing points and convert to new scale
             {
                 holder = graphPoints[i];    //hold current point
 
@@ -597,7 +597,7 @@ namespace WinformTest1
             int diff1;
             int diff2;
 
-            for (int i = 0; i < currentPos; i++)
+            for (int i = 0; i < currentPos; i++) //loop through all drawing points and convert to new scale
             {
                 holder = graphPoints[i];    //hold current point
 
