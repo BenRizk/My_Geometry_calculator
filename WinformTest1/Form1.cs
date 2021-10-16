@@ -541,13 +541,23 @@ namespace WinformTest1
             {
                 if(Int32.Parse(firstPoint.Text) >= 1 && Int32.Parse(secondPoint.Text) >= 1)
                 {
-                    int x = dataPoints[Int32.Parse(firstPoint.Text) - 1].X - dataPoints[Int32.Parse(secondPoint.Text) - 1].X;
-                    int y = dataPoints[Int32.Parse(firstPoint.Text) - 1].Y - dataPoints[Int32.Parse(secondPoint.Text) - 1].Y;
-                    label10.Text = "Result: " + Math.Sqrt((Math.Pow(x,2) + Math.Pow(y,2))).ToString();
+                    label10.Text = "Result: " + findLineLength(Int32.Parse(firstPoint.Text), Int32.Parse(firstPoint.Text)).ToString();
                 }
                 
             }
         }
+
+        //function to determine a length of a line given two points
+        //takes in two ints that represent the values entered into the textfield to get a point from graph(data-points)
+        private double findLineLength(int p1, int p2) 
+        {
+
+            int overallX = dataPoints[p1 - 1].X - dataPoints[p2 - 1].X;
+            int overallY = dataPoints[p1 - 1].Y - dataPoints[p2 - 1].Y;
+
+            return Math.Sqrt(Math.Pow(overallX, 2) + Math.Pow(overallY, 2));
+        }
+
 
         private void label11_Click(object sender, EventArgs e)
         {
@@ -557,10 +567,11 @@ namespace WinformTest1
         private void button6_Click(object sender, EventArgs e) //button to draw polygon given 4 points
         {
             if (Int32.TryParse(textBox6.Text, out dummy) && Int32.TryParse(textBox7.Text, out dummy) && Int32.TryParse(textBox8.Text, out dummy) && Int32.TryParse(textBox9.Text, out dummy))
-            { 
-            
-            
-            
+            {
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[Int32.Parse(textBox6.Text) - 1], graphPoints[Int32.Parse(textBox7.Text) - 1]);
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[Int32.Parse(textBox7.Text) - 1], graphPoints[Int32.Parse(textBox8.Text) - 1]);
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[Int32.Parse(textBox8.Text) - 1], graphPoints[Int32.Parse(textBox9.Text) - 1]);
+                this.CreateGraphics().DrawLine(new Pen(Brushes.Black, 2), graphPoints[Int32.Parse(textBox9.Text) - 1], graphPoints[Int32.Parse(textBox6.Text) - 1]);
             }
         }
 
@@ -612,5 +623,62 @@ namespace WinformTest1
             redraw();
             
         }
+
+        private void button10_Click(object sender, EventArgs e) // button to determine triangle type
+        {
+            if (Int32.TryParse(textBox3.Text, out dummy) && Int32.TryParse(textBox4.Text, out dummy) && Int32.TryParse(textBox5.Text, out dummy))
+            {
+
+                label10.Text = label10.Text + determmineTriangleType(Int32.Parse(textBox3.Text), Int32.Parse(textBox4.Text), Int32.Parse(textBox5.Text));
+
+            }
+        }
+    
+        private String determmineTriangleType(int p1, int p2, int p3) //function to determine triangle type by angle and edges
+        {
+            double[] angles = new double[3];
+            double[] sideLengths = new double[3];
+            
+            angles[0] = findGraphingAngle(p1 - 1, p2 - 1, p3 - 1);
+            angles[1] = findGraphingAngle(p1 - 1, p3 - 1, p2 - 1);
+            angles[2] = findGraphingAngle(p2 - 1, p1 - 1, p3 - 1);
+
+            sideLengths[0] = findLineLength(p1, p2);
+            sideLengths[1] = findLineLength(p1, p3);
+            sideLengths[2] = findLineLength(p2, p3);
+
+            String result = "";
+            
+            for(int i = 0; i < 3; i++)
+            {
+                if (angles[i] > 90)
+                {
+                    result = result + "Obtuse";
+                }
+                else if(angles[i] == 90)
+                {
+                    result = result + "Right Angle";
+                }
+            }
+
+            result = result + "Acute";
+
+            if (sideLengths[0] == sideLengths[1] && sideLengths[1] == sideLengths[2])
+            {
+                result = result + "Equilateral Triangle";
+            }
+
+            else if (sideLengths[0] == sideLengths[1] && sideLengths[1] != sideLengths[2]  || sideLengths[1] == sideLengths[2] && sideLengths[0] != sideLengths[1] || sideLengths[0] == sideLengths[2] && sideLengths[0] != sideLengths[1])
+            {
+                result = result + "Isoceles Triangle";
+            }
+            else
+            {
+                result = result + "Scalene Triangle";
+            }
+
+            return result;
+        }
+    
     }
 }

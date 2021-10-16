@@ -75,6 +75,7 @@ namespace WinformTest1
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridpointsBindingSource)).BeginInit();
@@ -469,11 +470,22 @@ namespace WinformTest1
             this.label13.TabIndex = 46;
             this.label13.Text = "Graph Controls:";
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(95, 735);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(201, 23);
+            this.button10.TabIndex = 47;
+            this.button10.Text = "Solve Triangle Type";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 791);
+            this.ClientSize = new System.Drawing.Size(1343, 883);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.radioButton2);
@@ -572,6 +584,7 @@ namespace WinformTest1
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button10;
     }
 }
 
